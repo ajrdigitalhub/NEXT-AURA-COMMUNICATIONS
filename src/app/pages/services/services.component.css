@@ -1,0 +1,212 @@
+/* ============================================
+   Services Page Styles
+   ============================================ */
+
+/* Page Hero - reused from about */
+.page-hero {
+  position: relative;
+  padding: 6rem 0 4rem;
+  text-align: center;
+  overflow: hidden;
+}
+.page-hero__bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(6, 6, 6, 0.85) 0%, rgba(6, 6, 6, 0.95) 100%), url('/images/hero-bg.png') center/cover no-repeat;
+}
+.page-hero__bg::before {
+  content: '';
+  position: absolute;
+  top: -30%; left: 50%; transform: translateX(-50%);
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.05);
+  filter: blur(80px);
+}
+.page-hero__content { position: relative; z-index: 1; }
+.page-hero__badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid var(--color-border);
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+.page-hero__title { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
+.page-hero__desc { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+/* ===== SERVICE DETAIL CARDS ===== */
+.service-detail-card {
+  padding: 3rem;
+  margin-bottom: 2rem;
+}
+
+.service-detail__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.service-detail__grid.reverse {
+  grid-template-columns: 1fr 1.3fr;
+  direction: rtl;
+}
+
+.service-detail__grid.reverse > * {
+  direction: ltr;
+}
+
+.service-detail__icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.service-detail__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.service-detail__desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.service-detail__section {
+  margin-bottom: 1.5rem;
+}
+
+.service-detail__section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--color-primary);
+}
+
+.service-detail__list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.service-detail__list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-subtext);
+}
+
+.service-detail__list li svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.service-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.service-detail__tag {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  color: var(--color-subtext);
+}
+
+.image-placeholder {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--color-subtext);
+  opacity: 0.4;
+  background: rgba(17, 17, 17, 0.5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+/* ===== FAQ ===== */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition);
+}
+
+.faq-item__question:hover {
+  color: var(--color-primary);
+}
+
+.faq-item__chevron {
+  transition: transform 0.3s ease;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-item__chevron {
+  transform: rotate(180deg);
+}
+
+.faq-item__answer {
+  padding: 0 1.5rem 1.25rem;
+}
+
+.faq-item__answer p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .service-detail-card {
+    padding: 2rem;
+  }
+  .service-detail__grid,
+  .service-detail__grid.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+  .service-detail__list {
+    grid-template-columns: 1fr;
+  }
+  .service-detail__image {
+    display: none;
+  }
+}
