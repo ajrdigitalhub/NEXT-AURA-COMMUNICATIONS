@@ -9,24 +9,51 @@
 
 /* --- CSS Custom Properties (Design Tokens) --- */
 :root {
-  --color-bg: #060606;
-  --color-card: #111111;
-  --color-primary: #8B5CF6;
-  --color-secondary: #A855F7;
-  --color-text: #FFFFFF;
-  --color-subtext: #B5B5B5;
-  --color-border: rgba(139, 92, 246, 0.2);
-  --color-glow: rgba(139, 92, 246, 0.15);
-  --color-gradient: linear-gradient(135deg, #8B5CF6, #A855F7);
-  --color-gradient-hover: linear-gradient(135deg, #A855F7, #C084FC);
+  /* LIGHT THEME (Default) */
+  --color-bg: #F9FAFB;
+  --color-card: #FFFFFF;
+  --color-primary: #2563EB; /* Corporate Blue */
+  --color-secondary: #3B82F6;
+  --color-text: #111827;
+  --color-subtext: #4B5563;
+  --color-border: rgba(37, 99, 235, 0.15);
+  --color-glow: rgba(37, 99, 235, 0.1);
+  --color-gradient: linear-gradient(135deg, #2563EB, #3B82F6);
+  --color-gradient-hover: linear-gradient(135deg, #1D4ED8, #2563EB);
+  
+  --color-card-bg-transparent: rgba(255, 255, 255, 0.85);
+  --color-hero-overlay-1: rgba(255, 255, 255, 0.75);
+  --color-hero-overlay-2: rgba(255, 255, 255, 0.95);
+  --color-header-bg: rgba(255, 255, 255, 0.9);
+  --color-input-bg: #F3F4F6;
+  
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
-  --border-radius: 16px;
-  --border-radius-sm: 8px;
-  --border-radius-lg: 24px;
+  --border-radius: 24px;
+  --border-radius-sm: 12px;
+  --border-radius-lg: 32px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.15);
-  --shadow-glow-lg: 0 0 40px rgba(139, 92, 246, 0.2);
+  --shadow-glow: 0 10px 30px rgba(37, 99, 235, 0.15);
+  --shadow-glow-lg: 0 15px 40px rgba(37, 99, 235, 0.2);
+}
+
+[data-theme="dark"] {
+  --color-bg: #060606;
+  --color-card: #111111;
+  --color-primary: #3B82F6; /* Slightly lighter blue for dark mode */
+  --color-secondary: #60A5FA;
+  --color-text: #FFFFFF;
+  --color-subtext: #B5B5B5;
+  --color-border: rgba(59, 130, 246, 0.2);
+  --color-glow: rgba(59, 130, 246, 0.15);
+  --color-gradient: linear-gradient(135deg, #2563EB, #3B82F6);
+  --color-gradient-hover: linear-gradient(135deg, #3B82F6, #60A5FA);
+  
+  --color-card-bg-transparent: rgba(17, 17, 17, 0.7);
+  --color-hero-overlay-1: rgba(6, 6, 6, 0.85);
+  --color-hero-overlay-2: rgba(6, 6, 6, 0.95);
+  --color-header-bg: rgba(6, 6, 6, 0.85);
+  --color-input-bg: rgba(17, 17, 17, 0.8);
 }
 
 /* --- Base Reset & Typography --- */
@@ -114,17 +141,19 @@ ul, ol {
 
 /* --- Glassmorphism Card --- */
 .glass-card {
-  background: rgba(17, 17, 17, 0.7);
+  background: var(--color-card-bg-transparent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   transition: var(--transition);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
 .glass-card:hover {
-  border-color: rgba(139, 92, 246, 0.4);
+  border-color: var(--color-primary);
   box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
 }
 
 /* --- Buttons --- */
@@ -148,13 +177,13 @@ ul, ol {
 
 .btn-primary {
   background: var(--color-gradient);
-  color: var(--color-text);
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  color: #FFFFFF; /* Ensure text is always white on primary buttons */
+  box-shadow: 0 4px 15px var(--color-glow);
 }
 
 .btn-primary:hover {
   background: var(--color-gradient-hover);
-  box-shadow: 0 6px 25px rgba(139, 92, 246, 0.45);
+  box-shadow: 0 6px 25px var(--color-glow);
   transform: translateY(-2px);
 }
 
@@ -166,7 +195,7 @@ ul, ol {
 
 .btn-secondary:hover {
   border-color: var(--color-primary);
-  background: rgba(139, 92, 246, 0.1);
+  background: var(--color-glow);
   transform: translateY(-2px);
 }
 
@@ -181,7 +210,7 @@ ul, ol {
 /* --- Glow Text --- */
 .glow-text {
   color: var(--color-primary);
-  text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  text-shadow: 0 0 20px var(--color-glow);
 }
 
 /* --- Scrollbar --- */
@@ -204,7 +233,7 @@ ul, ol {
 
 /* --- Selection --- */
 ::selection {
-  background: rgba(139, 92, 246, 0.3);
+  background: var(--color-glow);
   color: var(--color-text);
 }
 
@@ -250,3 +279,25 @@ ul, ol {
 .skip-link:focus {
   top: 0;
 }
+
+/* --- Elfsight Dark Mode Fix --- */
+/* Force widget background to be transparent in dark theme */
+[data-theme="dark"] .eapps-instagram-feed-posts-item-template-classic,
+[data-theme="dark"] .eapps-instagram-feed-header,
+[data-theme="dark"] .eapps-instagram-feed-posts,
+[data-theme="dark"] .eapps-instagram-feed,
+[data-theme="dark"] [class*="eapps-instagram-feed"],
+[data-theme="dark"] .elfsight-app-b87e4b9b-c907-4075-939a-c9a644b61870 > div,
+[data-theme="dark"] .elfsight-app-b87e4b9b-c907-4075-939a-c9a644b61870 > div > div {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+/* Make the header text white in dark mode */
+[data-theme="dark"] [class*="eapps-instagram-feed-header"] *,
+[data-theme="dark"] [class*="eapps-instagram-feed-header"] {
+  color: #ffffff !important;
+  background: transparent !important;
+}
+

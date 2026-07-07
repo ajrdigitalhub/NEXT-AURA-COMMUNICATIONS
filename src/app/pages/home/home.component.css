@@ -10,7 +10,7 @@
   align-items: center;
   overflow: hidden;
   padding: 2rem 0;
-  background-image: linear-gradient(rgba(6, 6, 6, 0.85), rgba(6, 6, 6, 0.95)), url('/images/hero-bg.png');
+  background-image: linear-gradient(var(--color-hero-overlay-1), var(--color-hero-overlay-2)), url('/images/hero_light.png');
   background-size: cover;
   background-position: center;
 }
@@ -73,7 +73,7 @@
 .stats-section {
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
-  background: rgba(17, 17, 17, 0.4);
+  background: var(--color-card-bg-transparent);
 }
 
 .stats-section__header {

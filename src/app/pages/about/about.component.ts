@@ -18,12 +18,9 @@ export class AboutComponent implements OnInit, AfterViewInit, OnDestroy {
   private readonly animation = inject(AnimationService);
 
   values: ValueCard[] = [
-    { icon: '/images/feature-icon.png', title: 'Integrity', description: 'We operate with honesty and transparency in every interaction.' },
-    { icon: '/images/feature-icon.png', title: 'Innovation', description: 'Constantly evolving our methods to deliver better results.' },
-    { icon: '/images/feature-icon.png', title: 'Excellence', description: 'Striving for the highest quality in everything we do.' },
-    { icon: '/images/feature-icon.png', title: 'Client Focus', description: 'Your success is our primary measure of achievement.' },
-    { icon: '/images/feature-icon.png', title: 'Transparency', description: 'Clear communication and honest reporting at every step.' },
-    { icon: '/images/feature-icon.png', title: 'Growth', description: 'Committed to driving sustainable growth for our clients.' }
+    { icon: '/images/value_integ.png', title: 'Integrity', description: 'We operate with complete transparency and honesty in all our dealings.' },
+    { icon: '/images/value_excel.png', title: 'Excellence', description: 'We strive for excellence in every call, every campaign, and every interaction.' },
+    { icon: '/images/value_innov.png', title: 'Innovation', description: 'We continuously adapt and innovate our strategies to stay ahead of the curve.' }
   ];
 
   timeline: TimelineEvent[] = [

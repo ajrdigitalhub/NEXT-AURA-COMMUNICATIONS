@@ -82,9 +82,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     { icon: '/images/feat_exp.png', title: 'Experienced Callers', desc: 'Trained telecallers with proven track records.' },
     { icon: '/images/feat_qa.png', title: 'Quality Assurance', desc: 'Rigorous quality checks on every call and campaign.' },
     { icon: '/images/feat_rep.png', title: 'Timely Reports', desc: 'Transparent, detailed reports delivered on schedule.' },
-    { icon: '/images/feature-icon.png', title: 'Affordable Pricing', desc: 'Competitive rates that deliver maximum ROI.' },
-    { icon: '/images/feature-icon.png', title: 'Higher Conversion', desc: 'Data-driven strategies that boost conversion rates.' },
-    { icon: '/images/feature-icon.png', title: 'Dedicated Support', desc: 'Round-the-clock support for all your needs.' }
+    { icon: '/images/feat_price.png', title: 'Affordable Pricing', desc: 'Competitive rates that deliver maximum ROI.' },
+    { icon: '/images/feat_conv.png', title: 'Higher Conversion', desc: 'Data-driven strategies that boost conversion rates.' },
+    { icon: '/images/feat_supp.png', title: 'Dedicated Support', desc: 'Round-the-clock support for all your needs.' }
   ];
 
   /** Process steps */

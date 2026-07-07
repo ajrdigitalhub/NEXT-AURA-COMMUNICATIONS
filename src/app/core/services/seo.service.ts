@@ -84,7 +84,7 @@ export class SeoService {
         availableLanguage: ['English', 'Hindi']
       },
       sameAs: [
-        'https://www.instagram.com/nextauracommunications',
+        'https://www.instagram.com/nextaura_communications?utm_source=qr&igsh=MXNoZnBza2Vtd2ZkZw==',
         'https://www.facebook.com/nextauracommunications',
         'https://www.linkedin.com/company/nextauracommunications'
       ]

@@ -100,7 +100,7 @@ import { CommonModule } from '@angular/common';
       width: 100%;
       height: 100%;
       min-height: 350px;
-      background: rgba(17, 17, 17, 0.8);
+      background: var(--color-card-bg-transparent);
       border: 1px solid var(--color-border);
       border-radius: var(--border-radius);
       display: flex;
@@ -154,10 +154,10 @@ import { CommonModule } from '@angular/common';
 })
 export class CarouselComponent implements OnInit, OnDestroy {
   @Input() slides: { src: string; alt: string }[] = [
-    { src: '/images/carousel_1.png', alt: 'Professional Telecalling Services' },
-    { src: '/images/carousel_2.png', alt: 'Lead Generation Solutions' },
-    { src: '/images/carousel_3.png', alt: 'Digital Marketing Excellence' },
-    { src: '/images/carousel_4.png', alt: 'Business Growth Partners' }
+    { src: '/images/carousel_light_1.png', alt: 'Professional Telecalling Services' },
+    { src: '/images/carousel_light_2.png', alt: 'Lead Generation Solutions' },
+    { src: '/images/carousel_light_3.png', alt: 'Digital Marketing Excellence' },
+    { src: '/images/carousel_light_4.png', alt: 'Business Growth Partners' }
   ];
 
   @Input() autoPlayInterval: number = 4000;

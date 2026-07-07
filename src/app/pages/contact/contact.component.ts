@@ -47,22 +47,22 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       icon: 'phone',
       title: 'Call Us',
-      value: '+91-XXXXXXXXXX',
-      link: 'tel:+91XXXXXXXXXX',
+      value: '+91 99510 28769',
+      link: 'tel:+919951028769',
       color: '#8B5CF6'
     },
     {
       icon: 'whatsapp',
       title: 'WhatsApp',
-      value: '+91-XXXXXXXXXX',
-      link: 'https://wa.me/91XXXXXXXXXX',
+      value: '+91 81428 21576',
+      link: 'https://wa.me/918142821576',
       color: '#25D366'
     },
     {
       icon: 'email',
       title: 'Email Us',
-      value: 'info@nextauracommunications.com',
-      link: 'mailto:info@nextauracommunications.com',
+      value: 'Nextaura.communications@gmail.com',
+      link: 'mailto:Nextaura.communications@gmail.com',
       color: '#A855F7'
     }
   ];

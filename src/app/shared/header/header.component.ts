@@ -2,6 +2,7 @@ import { Component, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NavLink } from '../../core/models/interfaces';
+import { ThemeService } from '../../core/services/theme.service';
 
 /**
  * Header Component
@@ -21,6 +22,9 @@ export class HeaderComponent {
 
   /** Whether the mobile menu is open */
   isMobileMenuOpen = signal(false);
+
+  /** Theme Service for Light/Dark mode toggle */
+  constructor(public themeService: ThemeService) {}
 
   /** Navigation links */
   navLinks: NavLink[] = [
